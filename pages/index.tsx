@@ -1,10 +1,13 @@
-import Link from 'next/link'
 import Layout from '../components/ui/Layout'
+import { useTranslation } from '../hooks/useTranslation'
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-  </Layout>
-)
+const Home = () => {
+  const { t } = useTranslation();
+  return (
+    <Layout title="Home | Next.js + TypeScript Example">
+      {`${t.description} 👋`}
+    </Layout>
+  )
+}
 
-export default IndexPage
+export default Home

@@ -25,7 +25,7 @@ I want a website where I can:
 - Career: `juanzitelli.dev/career`
 - Contact: `juanzitelli.dev/contact`
 - Projects: `juanzitelli.dev/projects`
-    - Project: `juanzitelli.dev/project/[id]`
+    - Project: `juanzitelli.dev/projects/[id]`
 
 ## Tech stack
 
