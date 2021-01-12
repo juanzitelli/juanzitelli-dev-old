@@ -1,3 +1,4 @@
+import './../styles/index.css'
 interface AppProps {
 	Component: React.FC;
 	pageProps: { [prop: string]: any }
