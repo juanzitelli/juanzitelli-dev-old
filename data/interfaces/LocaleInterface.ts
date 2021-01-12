@@ -1,3 +1,4 @@
+import { SpawnSyncOptionsWithBufferEncoding } from "child_process";
 import { Book } from "./about/Book";
 import { Sport } from "./about/Sport";
 import { Course } from "./career/Course";
@@ -38,6 +39,7 @@ export interface LocaleInterface {
       sports: Sport[];
     };
     booksSection: {
+      title: string;
       name: {
         title: string;
       };
@@ -55,11 +57,22 @@ export interface LocaleInterface {
       };
       books: Book[];
     };
+    musicSection: {
+      title: string;
+      description: string;
+    };
   };
 
   contact: {
     title: string; // Contact me...
     emailFormTitle: string;
     socialMediaLinksTitle: string;
+    sendButtonText: string;
+    fields: {
+      firstName: string;
+      lastName: string;
+      email: string;
+      message: string;
+    };
   };
 }

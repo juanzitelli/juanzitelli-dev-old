@@ -1,27 +1,17 @@
-interface BooksInterface {
-	books: Book[];
-}
-const Books = ({ books }: BooksInterface) => {
+import { Book as IBook } from "../../data/interfaces/about/Book"
+import { useTranslation } from "../../hooks/useTranslation"
+import Book from "./Book"
+
+const Books = () => {
+	const { t } = useTranslation();
 	return (
-		<>
-			<h1 className="text-3xl py-6">{booksTitle}</h1>
+		<section>
+			<h1 className="text-3xl py-6">{t.about.booksSection.title}</h1>
 			{
-				books.map(() => <Book  />)
+				t.about.booksSection.books.map(book => <Book book={book} />)
 			}
-		</>
+		</section>
 	)
 }
 
 export default Books
-
-
-/**
- * 	name,
-	nameTitle,
-	author,
-	authorTitle,
-	publisher,
-	publisherTitle,
-	learned,
-	learnedQuestion
- */

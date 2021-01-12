@@ -62,6 +62,7 @@ const en: LocaleInterface = {
       ],
     },
     booksSection: {
+      title: "Books",
       name: {
         title: "Name",
       },
@@ -87,11 +88,22 @@ const en: LocaleInterface = {
         },
       ],
     },
+    musicSection: {
+      title: "Music",
+      description: "Check out my 2020's favorite songs!",
+    },
   },
   contact: {
     title: "Let's work together! (or maybe just have a cup of coffee ☕)",
     emailFormTitle: "Fill the form below and press 'Send' to email me",
     socialMediaLinksTitle: "Or you can contact me via social media!",
+    sendButtonText: "Send",
+    fields: {
+      firstName: "First name",
+      lastName: "Last name",
+      email: "Email address",
+      message: "Message",
+    },
   },
 };
 

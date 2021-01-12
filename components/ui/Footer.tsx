@@ -4,7 +4,7 @@ const Footer = () => {
 	const { t } = useTranslation();
 	return (
 		<footer className="bg-gray-800 pt-10 flex flex-col items-center">
-			<div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex text-gray-300">
+			<div className="flex flex-row mt-1 md:flex-auto md:flex-row-reverse text-gray-300">
 				<a href="https://facebook.com/juanagustinzitelli" className="w-7 mx-1">
 					<i className="uil uil-facebook-f"></i>
 				</a>
