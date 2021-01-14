@@ -1,17 +1,32 @@
 import React from 'react'
 import Layout from '../../components/ui/Layout'
 import SectionDescription from '../../components/ui/SectionDescription';
+import useForm from '../../hooks/useForm';
 import { useTranslation } from '../../hooks/useTranslation'
 
 const Contact = () => {
 	const { t } = useTranslation();
+	const initialState = {
+		firstName: "",
+		lastName: "",
+		subject: "",
+		message: "",
+	}
+	const [formValues, handleInputChange, resetForm] = useForm(initialState)
+	const handleContactFormSubmit = () => {
+		try {
+			window.open(`mailto:juanzitelli7@gmail.com?subject=${formValues.name ?? ""}&body=${formValues.message ?? ""}`)
+		} catch (error) {
+
+		}
+	}
 	return (
 		<Layout title={`Contact`}>
 			<section className="p-5 sm:p-8 md:p-16 lg:p-32">
-				<SectionDescription description={t.contact.emailFormTitle} title={t.contact.title} />
+				<SectionDescription description={t.contact.emailFormTitle} title={t.contact.title} subtitle={t.contact.subtitle} />
 				<div>
 					<div className="mt-5 md:mt-0 md:col-span-2">
-						<form>
+						<form onSubmit={handleContactFormSubmit}>
 							<div className="shadow sm:rounded-md sm:overflow-hidden">
 								<div className="px-4 py-5 space-y-6 sm:p-6 md:px-24 lg:px-48">
 									<div className="flex flex-col justify-evenly">

@@ -24,7 +24,7 @@ const Book = ({ book }: BookProps) => {
 			<p className="my-4">{`${book.year}`}</p>
 
 			<strong>{t.about.booksSection.learned.title}</strong>
-			<p className="my-4 text-justify">{book.learned}</p>
+			<p className="my-4">{book.learned}</p>
 
 		</article>
 	)

@@ -1,4 +1,3 @@
-import { SpawnSyncOptionsWithBufferEncoding } from "child_process";
 import { Book } from "./about/Book";
 import { Sport } from "./about/Sport";
 import { Course } from "./career/Course";
@@ -14,12 +13,40 @@ export interface LocaleInterface {
     getToKnowMeButton: string;
     downloadCVButton: string;
   };
+  /**
+   * company
+      start
+      end
+      location
+      technologies
+      description
+      learned
+  },
+   */
   career: {
     title: string;
     description: string;
-    jobExperiences: JobExperience[];
-    university: University;
-    courses: Course[];
+    jobExperiencesSection: {
+      timeline: { title: string };
+      location: { title: string };
+      learned: { title: string };
+      description: { title: string };
+      technologies: { title: string };
+      title: string;
+      jobExperiences: JobExperience[];
+    };
+    universitySection: {
+      choice: { title: string };
+      expectations: { title: string };
+      averageScore: { title: string };
+      subjects: { title: string };
+      title: string;
+      university: University;
+    };
+    coursesSection: {
+      title: string;
+      courses: Course[];
+    };
   };
   about: {
     title: string;
@@ -64,7 +91,8 @@ export interface LocaleInterface {
   };
 
   contact: {
-    title: string; // Contact me...
+    title: string;
+    subtitle: string;
     emailFormTitle: string;
     socialMediaLinksTitle: string;
     sendButtonText: string;
@@ -74,5 +102,10 @@ export interface LocaleInterface {
       email: string;
       message: string;
     };
+  };
+  projects: {
+    title: string;
+    description: string;
+    takeMeThereText: string;
   };
 }

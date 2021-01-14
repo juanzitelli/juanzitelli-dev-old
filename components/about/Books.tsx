@@ -1,4 +1,3 @@
-import { Book as IBook } from "../../data/interfaces/about/Book"
 import { useTranslation } from "../../hooks/useTranslation"
 import Book from "./Book"
 

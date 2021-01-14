@@ -25,7 +25,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => {
       <header>
         <Navbar items={t.home.navbarItems} />
       </header>
-      <main className="min-h-screen bg-black">
+      <main className="min-h-screen bg-gray-900">
         {children}
       </main>
       <Footer />

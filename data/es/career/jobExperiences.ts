@@ -29,7 +29,7 @@ export const jobExperiences: JobExperience[] = [
   {
     company: "CAETI - UAI",
     start: new Date("15-06-2019"),
-    end: "Present",
+    end: "Presente",
     location: "Rosario, Santa Fe, Argentina",
     technologies: [
       { description: "Python" },

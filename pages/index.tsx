@@ -28,8 +28,8 @@ const Home = () => {
 
   return (
     <Layout title={`Home`}>
-      <div className="w-full h-screen bg-center bg-no-repeat bg-cover bg-black">
-        <div className="w-full h-screen bg-opacity-50 bg-black flex justify-center items-center animate__animated animate__fadeIn">
+      <div className="w-full h-screen bg-center bg-no-repeat bg-cover">
+        <div className="w-full h-screen bg-opacity-50 flex justify-center items-center animate__animated animate__fadeIn">
           <div className=" lg:mx-4 md:mx-4 lg:mt-0 md:mt-0 mb pb-10 text-center text-white">
             <Image loading="lazy" layout="intrinsic" className="rounded-full my-10" height="160" width="160" src="/img/profile.jpg" />
             <h1 className="font-bold text-4xl md:text-7xl mb-4 sm:my-1 my-7">Juan Agustín Zitelli</h1>

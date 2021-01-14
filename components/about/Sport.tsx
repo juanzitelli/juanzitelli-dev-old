@@ -19,7 +19,7 @@ const Sport = (props: { sport: SportInterface }) => {
 			<p className="my-4">{`🌎 ${sport.location}`}</p>
 
 			<strong>{t.about.sportsSection.learned.title}</strong>
-			<p className="my-4 text-justify">{sport.learned}</p>
+			<p className="my-4">{sport.learned}</p>
 
 		</article>
 	)

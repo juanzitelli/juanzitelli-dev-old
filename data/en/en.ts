@@ -1,13 +1,13 @@
 import { LocaleInterface } from "../interfaces/LocaleInterface";
-import { courses } from "../es/career/courses";
-import { jobExperiences } from "../es/career/jobExperiences";
+import { courses } from "./career/courses";
+import { jobExperiences } from "./career/jobExperiences";
 
 const en: LocaleInterface = {
   home: {
     navbarItems: [
       { description: "Home", url: "/" },
-      { description: "About", url: "/about" },
       { description: "Career", url: "/career" },
+      { description: "About", url: "/about" },
       { description: "Projects", url: "/projects" },
       { description: "Contact", url: "/contact" },
     ],
@@ -26,14 +26,32 @@ const en: LocaleInterface = {
     title: "Career",
     description:
       "This section describes everything you need to know about my career in Software Engineering",
-    jobExperiences,
-    university: {
-      choice: `Since my father is a retired Systems Analyst, I've had a close relationship with computers since I was a little child. As I grew up I started to notice how much potential computers and specially software had, watching my dad speed up regular tasks as writing notes or mailing using tools like Word / email clients (respectively). Firstly I was seduced by videogames, specially Age of Empires II (I wanted to see my home country Argentina be part of that game as a brand new civilization!). Then, robotics and automation called my attention as I saw robotic arms put cars and complex devices together using software and physics. Finally, I saw the lack of efficiency that businesses and state entities had because of the many tasks that they were performing manually (mostly paperwork), and I found myself thinking "This whole waiting line could dissapear if those paper forms could be filled online and sent by email or some platform!". That's when I knew that Software Engineering was my path!`,
-      subjects: `I do like the ones where there's a huge project to build and the different topics this particular subject teaches you, help you solve difficulties that may appear along the way. In the other side of the highway, I definetly do not enjoy fully theoretical subjects. Not because I don't like reading theory, but because I truly believe those could be sum up in two or three classes and then, just videoconferences or YouTube videos! And leave more in-class time to practise and ask the teacher for advice.`,
-      expectations: ` I expect to learn much more about the "human" part of the software industry. I want to learn how a company is built and what do I need to construct one, also I'd love to learn how software companies manage their teams and how are the dynamics like inside of a development team`,
-      averageScore: 9.2,
+    jobExperiencesSection: {
+      title: "Job Experiences",
+      jobExperiences,
+      timeline: { title: "When?" },
+      location: { title: "Where?" },
+      learned: { title: "What did I learn?" },
+      description: { title: "Description" },
+      technologies: { title: "Technologies" },
     },
-    courses: courses,
+    universitySection: {
+      averageScore: { title: "Average score" },
+      choice: { title: "Why did I choose Software Engineering?" },
+      expectations: { title: "Expectation for the following years" },
+      subjects: { title: "What subjects do I like the most?" },
+      title: "University",
+      university: {
+        choice: `Since my father is a retired Systems Analyst, I've had a close relationship with computers since I was a little child. As I grew up I started to notice how much potential computers and specially software had, watching my dad speed up regular tasks as writing notes or mailing using tools like Word / email clients (respectively). Firstly I was seduced by videogames, specially Age of Empires II (I wanted to see my home country Argentina be part of that game as a brand new civilization!). Then, robotics and automation called my attention as I saw robotic arms put cars and complex devices together using software and physics. Finally, I saw the lack of efficiency that businesses and state entities had because of the many tasks that they were performing manually (mostly paperwork), and I found myself thinking "This whole waiting line could dissapear if those paper forms could be filled online and sent by email or some platform!". That's when I knew that Software Engineering was my path!`,
+        subjects: `I do like the ones where there's a huge project to build and the different topics this particular subject teaches you, help you solve difficulties that may appear along the way. In the other side of the highway, I definetly do not enjoy fully theoretical subjects. Not because I don't like reading theory, but because I truly believe those could be sum up in two or three classes and then, just videoconferences or YouTube videos! And leave more in-class time to practise and ask the teacher for advice.`,
+        expectations: ` I expect to learn much more about the "human" part of the software industry. I want to learn how a company is built and what do I need to construct one, also I'd love to learn how software companies manage their teams and how are the dynamics like inside of a development team`,
+        averageScore: 9.2,
+      },
+    },
+    coursesSection: {
+      title: "Courses",
+      courses: courses,
+    },
   },
   about: {
     title: "About me",
@@ -94,7 +112,8 @@ const en: LocaleInterface = {
     },
   },
   contact: {
-    title: "Let's work together! (or maybe just have a cup of coffee ☕)",
+    title: "Let's work together!",
+    subtitle: "(Or maybe just have a cup of coffee ☕)",
     emailFormTitle: "Fill the form below and press 'Send' to email me",
     socialMediaLinksTitle: "Or you can contact me via social media!",
     sendButtonText: "Send",
@@ -105,6 +124,11 @@ const en: LocaleInterface = {
       message: "Message",
     },
   },
+  projects: {
+    title:"Projects",
+    description: "Check out my public projects! Click on them to see more",
+    takeMeThereText:"Take me there!"
+  }
 };
 
 export default en;
