@@ -1,25 +1,36 @@
+import axios from 'axios';
 import React from 'react'
 import Layout from '../../components/ui/Layout'
 import SectionDescription from '../../components/ui/SectionDescription';
 import useForm from '../../hooks/useForm';
 import { useTranslation } from '../../hooks/useTranslation'
 
+interface useFormContactInterface {
+	firstName: string; lastName: string; email: string; message: string;
+}
+
 const Contact = () => {
 	const { t } = useTranslation();
-	const initialState = {
+	const initialState: useFormContactInterface = {
 		firstName: "",
 		lastName: "",
-		subject: "",
+		email: "",
 		message: "",
 	}
-	const [formValues, handleInputChange, resetForm] = useForm(initialState)
-	const handleContactFormSubmit = () => {
-		try {
-			window.open(`mailto:juanzitelli7@gmail.com?subject=${formValues.name ?? ""}&body=${formValues.message ?? ""}`)
-		} catch (error) {
+	const [formValues, handleInputChange, resetForm] = useForm<useFormContactInterface>(initialState)
+	const { firstName, lastName, email, message } = formValues;
 
+	const handleContactFormSubmit = async () => {
+		try {
+			await axios.post('/api/contact', {
+				firstName, lastName, email, message
+			})
+			resetForm();
+		} catch (error) {
+			console.error(error)
 		}
 	}
+	
 	return (
 		<Layout title={`Contact`}>
 			<section className="p-5 sm:p-8 md:p-16 lg:p-32">
@@ -31,24 +42,24 @@ const Contact = () => {
 								<div className="px-4 py-5 space-y-6 sm:p-6 md:px-24 lg:px-48">
 									<div className="flex flex-col justify-evenly">
 										<div className="my-3">
-											<label htmlFor="email_address" className="block text-sm font-medium text-white">{t.contact.fields.email}</label>
-											<input type="email" name="email_address" id="email_address" autoComplete="email" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-black" placeholder={"email@email.com"} />
+											<label htmlFor="email" className="block text-sm font-medium text-white">{t.contact.fields.email}</label>
+											<input onChange={handleInputChange} value={email} type="email" name="email" id="email" autoComplete="email" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-black" placeholder={"email@email.com"} />
 										</div>
 
 										<div className="my-3">
-											<label htmlFor="first_name" className="block text-sm font-medium text-white">{t.contact.fields.firstName}</label>
-											<input type="text" name="first_name" id="first_name" autoComplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-black" placeholder="Juan Agustín" />
+											<label htmlFor="firstName" className="block text-sm font-medium text-white">{t.contact.fields.firstName}</label>
+											<input onChange={handleInputChange} value={firstName} type="text" name="firstName" id="firstName" autoComplete="given-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-black" placeholder="Juan Agustín" />
 										</div>
 
 										<div className="my-3">
-											<label htmlFor="last_name" className="block text-sm font-medium text-white">{t.contact.fields.lastName}</label>
-											<input type="text" name="last_name" id="last_name" autoComplete="family-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-black" placeholder="Zitelli" />
+											<label htmlFor="lastName" className="block text-sm font-medium text-white">{t.contact.fields.lastName}</label>
+											<input onChange={handleInputChange} value={lastName} type="text" name="lastName" id="lastName" autoComplete="family-name" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md text-black" placeholder="Zitelli" />
 										</div>
 										<div className="my-3">
-											<label htmlFor="about" className="block text-sm font-medium text-white">
+											<label htmlFor="message" className="block text-sm font-medium text-white">
 												{t.contact.fields.message}
 											</label>
-											<textarea id="about" name="about" rows={3} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md text-black" placeholder=""></textarea>
+											<textarea onChange={handleInputChange} value={message} id="message" name="message" rows={3} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md text-black" placeholder=""></textarea>
 										</div>
 									</div>
 									<div className="py-2 text-right sm:px-6">

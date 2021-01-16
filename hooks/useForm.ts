@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 interface useFormProps {
-  [prop: string]: string | number | Date
+  [prop: string]: string;
 }
 
-const useForm = (initialState: useFormProps) => {
-  const [formState, setFormState] = useState(initialState);
+const useForm = <T>(initialState: T): [T, (event: any) => void, () => void] => {
+  const [formState, setFormState] = useState<T>(initialState);
 
   const resetForm = () => {
     setFormState(initialState);
