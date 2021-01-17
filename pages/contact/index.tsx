@@ -1,15 +1,19 @@
 import axios from 'axios';
-import React, { FormEvent } from 'react'
+import React, { FormEvent, useState } from 'react'
 import Layout from '../../components/ui/Layout'
 import SectionDescription from '../../components/ui/SectionDescription';
 import useForm from '../../hooks/useForm';
 import { useTranslation } from '../../hooks/useTranslation'
+import Loader from 'react-loader-spinner'
 
 interface useFormContactInterface {
 	firstName: string; lastName: string; email: string; message: string;
 }
 
 const Contact = () => {
+	const [emailSendStatus, setEmailSendStatus] = useState("")
+	const [emailSendError, setEmailSendError] = useState(false)
+	const [isEmailSending, setIsEmailSending] = useState(false)
 	const { t } = useTranslation();
 	const initialState: useFormContactInterface = {
 		firstName: "",
@@ -21,13 +25,20 @@ const Contact = () => {
 	const { firstName, lastName, email, message } = formValues;
 
 	const handleContactFormSubmit = async (e: FormEvent) => {
+		setIsEmailSending(true)
 		try {
 			e.preventDefault();
 			await axios.post('/api/contact', {
 				firstName, lastName, email, message
 			})
 			resetForm();
+			setIsEmailSending(false)
+			setEmailSendStatus(t.contact.email.emailSentSuccess)
+			setEmailSendError(false);
 		} catch (error) {
+			setIsEmailSending(false)
+			setEmailSendStatus(t.contact.email.emailSentError)
+			setEmailSendError(true);
 			console.error(error)
 		}
 	}
@@ -63,9 +74,21 @@ const Contact = () => {
 											<textarea onChange={handleInputChange} value={message} id="message" name="message" rows={3} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md text-black" placeholder=""></textarea>
 										</div>
 									</div>
-									<div className="py-2 text-right sm:px-6">
-										<button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition ease-300">{`${t.contact.email.sendButtonText}`}</button>
+									<div className=" flex flex-row justify-end py-2 text-right sm:px-6">
+										{
+											!isEmailSending ?
+												<button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition ease-300">{`${t.contact.email.sendButtonText}`}</button>
+												: <Loader
+													type="ThreeDots"
+													color="#059669"
+													width={50}
+													height={50}
+													key="loader"
+													timeout={3000} //3 secs
+												/>
+										}
 									</div>
+									<span className={`${emailSendError ? "text-red-500" : "text-green-500"}`}>{emailSendStatus}</span>
 								</div>
 
 							</div>
