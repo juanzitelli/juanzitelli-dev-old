@@ -9,8 +9,8 @@ export default async (req: any, res: any) => {
 	console.log("🌟 REFRESH TOKEN" + process.env.CLIENT_REFRESH_TOKEN)
 
 	const oAuth2Client = new google.auth.OAuth2(
-		process.env.CLIENT_ID, 
-		process.env.CLIENT_SECRET, 
+		process.env.CLIENT_ID,
+		process.env.CLIENT_SECRET,
 		process.env.CLIENT_REDIRECT_URI)
 	oAuth2Client.setCredentials({ refresh_token: process.env.CLIENT_REFRESH_TOKEN })
 
@@ -39,7 +39,7 @@ export default async (req: any, res: any) => {
 	`,
 	};
 
-	transporter.sendMail(mailOption, (err: any, data: any) => {
+	transporter.sendMail(mailOption, (err: any) => {
 		if (err) {
 			console.log(err);
 			res.send("error" + JSON.stringify(err));
