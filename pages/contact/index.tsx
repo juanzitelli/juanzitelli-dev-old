@@ -23,7 +23,6 @@ const Contact = () => {
 	}
 	const [formValues, handleInputChange, resetForm] = useForm<useFormContactInterface>(initialState)
 	const { firstName, lastName, email, message } = formValues;
-
 	const handleContactFormSubmit = async (e: FormEvent) => {
 		setIsEmailSending(true)
 		try {
@@ -42,9 +41,8 @@ const Contact = () => {
 			console.error(error)
 		}
 	}
-
 	return (
-		<Layout title={`Contact`}>
+		<Layout title={`${t.contact.title}`}>
 			<section className="p-5 sm:p-8 md:p-16 lg:p-32">
 				<SectionDescription description={t.contact.emailFormTitle} title={t.contact.title} subtitle={t.contact.subtitle} />
 				<div>
