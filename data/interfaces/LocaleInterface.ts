@@ -1,6 +1,5 @@
 import { Book } from "./about/Book";
 import { Sport } from "./about/Sport";
-import { Course } from "./career/Course";
 import { JobExperience } from "./career/JobExperience";
 import { University } from "./career/University";
 import { NavbarItem } from "./ui/NavbarItem";

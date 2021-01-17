@@ -3,7 +3,6 @@
 import { Repository } from "../../data/interfaces/projects/Repository"
 import { useTranslation } from "../../hooks/useTranslation"
 
-
 interface ProjectProps {
 	repo: Repository
 }

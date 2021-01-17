@@ -1,5 +1,4 @@
 import { LocaleInterface } from "../interfaces/LocaleInterface";
-import { courses } from "./career/courses";
 import { jobExperiences } from "./career/jobExperiences";
 
 const en: LocaleInterface = {
@@ -49,6 +48,7 @@ const en: LocaleInterface = {
       },
     },
     coursesSection: {
+      coursesURLs: [""],
       title: "Courses",
     },
   },

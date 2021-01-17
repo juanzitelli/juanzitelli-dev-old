@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { NavbarItem } from "../../data/interfaces/LocaleInterface"
+import { NavbarItem } from "../../data/interfaces/ui/NavbarItem"
 
 const NavbarLink = ({ description, url }: NavbarItem) => {
 	return (
