@@ -71,8 +71,8 @@ const en: LocaleInterface = {
       sports: [
         {
           name: "Taekwondo",
-          start: new Date("10-05-2006"),
-          end: new Date("20-12-2016"),
+          start: new Date(2006, 5, 10),
+          end: new Date(2016, 21, 20),
           location: "San Nicolás de los Arroyos, Buenos Aires, Argentina",
           learned: `This one left me many experiences and values that I carry with me no matter what. Perseverance (to never give up on something I really desire), self control (to remember to stay calm and thoughtful during unpleasant situations), integrity (to stay true to what I believe it's right), courtesy (to always being polite and respectful to my peers and superiors) and indomitable spirit (to keep on learning from my mistakes and never back down in front of a challenge).`,
         },

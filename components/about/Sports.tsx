@@ -1,4 +1,3 @@
-import { Sport as SportInterface } from "../../data/interfaces/about/Sport"
 import { useTranslation } from "../../hooks/useTranslation"
 import Sport from "./Sport"
 

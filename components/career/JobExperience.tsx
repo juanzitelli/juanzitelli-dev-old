@@ -1,13 +1,18 @@
 import { JobExperience as IJobExperience } from "../../data/interfaces/career/JobExperience";
 import { useTranslation } from "../../hooks/useTranslation"
 import Technologies from "./Technologies";
-
+import dayjs from 'dayjs'
 interface JobExperienceProps {
 	jobExperience: IJobExperience
 }
 
 const JobExperience = ({ jobExperience }: JobExperienceProps) => {
 	const { t, locale } = useTranslation();
+
+	const dayjsStart = dayjs(jobExperience.start).format('DD-MM-YYYY');
+
+	const dayjsEnd = typeof jobExperience.end === "string" ? jobExperience.end : dayjs(jobExperience.end).format('DD-MM-YYYY');
+
 	return (
 		<article className="flex flex-col justify-between items-start p-6 my-2 mx-2 bg-white bg-opacity-20 rounded-lg max-w-3xl shadow-2xl">
 
@@ -16,7 +21,7 @@ const JobExperience = ({ jobExperience }: JobExperienceProps) => {
 			</header>
 
 			<strong>{`${t.career.jobExperiencesSection.timeline.title}`}</strong>
-			<p className="my-4">{`${locale === "es" ? "Desde" : "From"} ${jobExperience.start} ${locale === "es" ? "hasta" : "to"} ${jobExperience.end}`}</p>
+			<p className="my-4">{`${locale === "es" ? "Desde" : "From"} ${dayjsStart} ${locale === "es" ? "hasta" : "to"} ${dayjsEnd}`}</p>
 
 			<strong>{`${t.career.jobExperiencesSection.location.title}`}</strong>
 			<p className="my-4">{`🌎 ${jobExperience.location}`}</p>

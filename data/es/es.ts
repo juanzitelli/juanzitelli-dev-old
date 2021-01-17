@@ -27,6 +27,7 @@ const es: LocaleInterface = {
     description:
       "Esta sección describe todo lo que necesitás saber acerca de mi carrera en Ingeniería en sistemas",
     coursesSection: {
+      coursesURLs: [""],
       title: "Cursos",
     },
     jobExperiencesSection: {
@@ -63,8 +64,8 @@ const es: LocaleInterface = {
       sports: [
         {
           name: "Taekwondo",
-          start: new Date("10-05-2006"),
-          end: new Date("20-12-2016"),
+          start: new Date(2006, 5, 10),
+          end: new Date(2016, 12, 20),
           location: "San Nicolás de los Arroyos, Buenos Aires, Argentina",
           learned: `Este me dejó con muchas experiencias y valores que llevo conmigo sin importar la situación. Perseverancia (A nunca dejar de lado algo que realmente deseo), Autocontrol (Para siempre recordar mantenerme calmó Y pensativo durante situaciones poco agradables), Integridad (Para mantenerme fiel a lo que creo que es correcto), Cortesía (Para siempre ser educado y respetuoso con mis compañeros y superiores) y Espíritu indomáble (Para seguir aprendiendo de mis errores y nunca retroceder en frente de un desafío)`,
         },

@@ -3,8 +3,8 @@ import { JobExperience } from "../../interfaces/career/JobExperience";
 export const jobExperiences: JobExperience[] = [
   {
     company: "Bi-Sports",
-    start: new Date("01-01-2019"),
-    end: new Date("01-06-2019"),
+    start: new Date(2019, 1, 1),
+    end: new Date(2019, 6, 1),
     location: "Rosario, Santa Fe, Argentina",
     technologies: [
       {
@@ -28,7 +28,7 @@ export const jobExperiences: JobExperience[] = [
   },
   {
     company: "CAETI - UAI",
-    start: new Date("15-06-2019"),
+    start: new Date(2019, 6, 15),
     end: "Presente",
     location: "Rosario, Santa Fe, Argentina",
     technologies: [
