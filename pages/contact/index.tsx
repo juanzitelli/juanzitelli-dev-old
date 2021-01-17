@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React from 'react'
+import React, { FormEvent } from 'react'
 import Layout from '../../components/ui/Layout'
 import SectionDescription from '../../components/ui/SectionDescription';
 import useForm from '../../hooks/useForm';
@@ -20,8 +20,9 @@ const Contact = () => {
 	const [formValues, handleInputChange, resetForm] = useForm<useFormContactInterface>(initialState)
 	const { firstName, lastName, email, message } = formValues;
 
-	const handleContactFormSubmit = async () => {
+	const handleContactFormSubmit = async (e: FormEvent) => {
 		try {
+			e.preventDefault();
 			await axios.post('/api/contact', {
 				firstName, lastName, email, message
 			})
