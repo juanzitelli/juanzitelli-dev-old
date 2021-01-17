@@ -1,5 +1,5 @@
 import { LocaleInterface } from "../interfaces/LocaleInterface";
-import { courses } from "../es/career/courses";
+
 import { jobExperiences } from "../es/career/jobExperiences";
 
 const es: LocaleInterface = {
@@ -28,7 +28,6 @@ const es: LocaleInterface = {
       "Esta sección describe todo lo que necesitás saber acerca de mi carrera en Ingeniería en sistemas",
     coursesSection: {
       title: "Cursos",
-      courses: courses,
     },
     jobExperiencesSection: {
       title: "Experiencias laborales",
@@ -117,7 +116,15 @@ const es: LocaleInterface = {
     subtitle: "(O quizás solo ir por una taza de café ☕)",
     emailFormTitle: `Completá el siguiente formulario y presiona "Enviar" para enviarme un correo electrónico`,
     socialMediaLinksTitle: "¡También podés contactarme vía redes sociales!",
-    sendButtonText: "Enviar",
+    email: {
+      emailSentError: "Algo salió mal... ¡Volvé a intentarlo más tarde! 😅",
+      emailSentSuccess: "¡Tu correo electrónico fue enviado con éxito! 😁",
+      sendButtonText: "Enviar",
+      buttonTitles: {
+        githubRepositoryTitle: "Ir al repositorio de Github del proyecto",
+        projectWebsiteTitle: "Ir al sitio web del proyecto",
+      },
+    },
     fields: {
       firstName: "Nombre/s",
       lastName: "Apellido/s",
@@ -127,8 +134,9 @@ const es: LocaleInterface = {
   },
   projects: {
     title: "Proyectos",
-    description: "¡Estos son mis proyectos públicos! Hacé click en ellos para ver más detalles",
-    takeMeThereText:"¡Quiero verlo!"
+    description:
+      "¡Estos son mis proyectos públicos! Si el proyecto está deployado, podés acceder a su sitio web haciendo click en el botón verde",
+    takeMeThereText: "¡Quiero verlo!",
   },
 };
 

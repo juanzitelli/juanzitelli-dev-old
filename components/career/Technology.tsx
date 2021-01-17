@@ -6,7 +6,7 @@ interface TechnologyProps {
 
 const Technology = ({ technology }: TechnologyProps) => {
 	return (
-		<span className="bg-blue-400 text-black px-2 py-1 rounded-lg mt-1 sm:mx-1 md:mx-2">
+		<span className="bg-blue-900 text-white px-2 py-1 rounded-lg mt-1 sm:mx-1 md:mx-2">
 			{technology.description}
 		</span>
 	)

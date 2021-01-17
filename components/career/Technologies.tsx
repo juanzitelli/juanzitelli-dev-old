@@ -12,7 +12,7 @@ const Technologies = ({ technologies, title }: TechnologiesProps) => {
 			<strong className="mb-2">{`${title}`}</strong>
 			<div className="flex flex-row justify-evenly items-start flex-wrap">
 				{
-					technologies.map(technology => <Technology technology={technology} />)
+					technologies.map(technology => <Technology key={technology.description} technology={technology} />)
 				}
 			</div>
 		</div>

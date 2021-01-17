@@ -13,16 +13,6 @@ export interface LocaleInterface {
     getToKnowMeButton: string;
     downloadCVButton: string;
   };
-  /**
-   * company
-      start
-      end
-      location
-      technologies
-      description
-      learned
-  },
-   */
   career: {
     title: string;
     description: string;
@@ -45,7 +35,7 @@ export interface LocaleInterface {
     };
     coursesSection: {
       title: string;
-      courses: Course[];
+      coursesURLs: string[];
     };
   };
   about: {
@@ -95,7 +85,15 @@ export interface LocaleInterface {
     subtitle: string;
     emailFormTitle: string;
     socialMediaLinksTitle: string;
-    sendButtonText: string;
+    email: {
+      sendButtonText: string;
+      emailSentSuccess: string;
+      emailSentError: string;
+      buttonTitles: {
+        githubRepositoryTitle: string;
+        projectWebsiteTitle: string;
+      }
+    }
     fields: {
       firstName: string;
       lastName: string;

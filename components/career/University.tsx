@@ -7,7 +7,7 @@ const University = () => {
 		<section>
 			<h1 className="text-3xl py-6">{t.career.universitySection.title}</h1>
 
-			<article className="flex flex-col justify-between items-start p-6 my-2 mx-2 bg-white bg-opacity-20 rounded-lg max-w-3xl">
+			<article className="flex flex-col justify-between items-start p-6 my-2 mx-2 bg-white bg-opacity-20 rounded-lg max-w-3xl shadow-2xl">
 
 				<strong>{`${t.career.universitySection.choice.title}`}</strong>
 				<p className="my-4">{`${choice}`}</p>

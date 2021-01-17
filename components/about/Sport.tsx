@@ -6,7 +6,7 @@ const Sport = (props: { sport: SportInterface }) => {
 	const { sport } = props;
 	const { t } = useTranslation();
 	return (
-		<article className="flex flex-col justify-between items-start p-6 my-2 mx-2 bg-white bg-opacity-20 rounded-lg max-w-3xl">
+		<article className="flex flex-col justify-between items-start p-6 my-2 mx-2 bg-white bg-opacity-20 rounded-lg max-w-3xl shadow-2xl">
 
 			<header>
 				<h1 className="text-2xl my-4">{sport.name}</h1>

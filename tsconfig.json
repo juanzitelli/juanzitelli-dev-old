@@ -18,6 +18,7 @@
     "strict": true,
     "target": "esnext",
     "allowSyntheticDefaultImports": true,
+    "sourceMap": true
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx"]

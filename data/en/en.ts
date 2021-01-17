@@ -50,14 +50,13 @@ const en: LocaleInterface = {
     },
     coursesSection: {
       title: "Courses",
-      courses: courses,
     },
   },
   about: {
     title: "About me",
     description: "Find out some non-software related stuff about my life",
     briefDescription:
-      "Analyst and future software engineer with focus in social impact initiatives. I like to use web technologies to solve little problems. Gained some experience in idea spreading and teamwork thanks to TEDxSanNicolás. Always fond of learning and applying new skills, and I hope to give back to community in the future.",
+      "Systems Analyst and future software engineer with focus in social impact initiatives. I like to use web technologies to solve little problems. Gained some experience in idea spreading and teamwork thanks to TEDxSanNicolás. Always fond of learning and applying new skills, and I hope to give back to community in the future.",
     sportsSection: {
       title: "Sports",
       timeline: {
@@ -116,7 +115,15 @@ const en: LocaleInterface = {
     subtitle: "(Or maybe just have a cup of coffee ☕)",
     emailFormTitle: "Fill the form below and press 'Send' to email me",
     socialMediaLinksTitle: "Or you can contact me via social media!",
-    sendButtonText: "Send",
+    email: {
+      emailSentError: "Oops, something went wrong... Try again later! 😅",
+      emailSentSuccess: "Your email was successfully sent! 😁",
+      sendButtonText: "Send",
+      buttonTitles: {
+        githubRepositoryTitle: "Go to the project's Github repo",
+        projectWebsiteTitle: "Go to the project's website",
+      },
+    },
     fields: {
       firstName: "First name",
       lastName: "Last name",
@@ -125,10 +132,10 @@ const en: LocaleInterface = {
     },
   },
   projects: {
-    title:"Projects",
+    title: "Projects",
     description: "Check out my public projects! Click on them to see more",
-    takeMeThereText:"Take me there!"
-  }
+    takeMeThereText: "Take me there!",
+  },
 };
 
 export default en;
