@@ -1,9 +1,5 @@
 import { useState } from "react";
 
-interface useFormProps {
-  [prop: string]: string;
-}
-
 const useForm = <T>(initialState: T): [T, (event: any) => void, () => void] => {
   const [formState, setFormState] = useState<T>(initialState);
 
