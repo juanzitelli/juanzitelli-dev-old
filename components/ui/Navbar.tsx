@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { NavbarItem } from '../../data/interfaces/LocaleInterface'
+import { NavbarItem } from '../../data/interfaces/ui/NavbarItem'
 import NavbarLink from './NavbarLink'
 
 interface NavbarProps {
