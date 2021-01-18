@@ -27,7 +27,7 @@ const Home = () => {
   const activeQuote = quotes[activeIndex]
 
   return (
-    <Layout title={`Home`}>
+    <Layout title={`${locale === "es" ? "Inicio" : "Home"}`}>
 
       <div className="w-full h-screen bg-opacity-50 flex justify-center items-center animate__animated animate__fadeIn">
         <div className="lg:mx-4 md:mx-4 lg:mt-0 md:mt-0 mb pb-10 text-center text-white w-full sm:w-4/5">

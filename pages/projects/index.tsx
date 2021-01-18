@@ -14,7 +14,7 @@ interface ProjectsProps {
 const Projects = ({ repos }: ProjectsProps) => {
 	const { t } = useTranslation();
 	return (
-		<Layout title="Projects">
+		<Layout title={`${t.projects.title}`}>
 			<section className="p-5 sm:p-8 md:p-16 lg:p-32">
 				<header>
 					<SectionDescription title={t.projects.title} description={t.projects.description} />

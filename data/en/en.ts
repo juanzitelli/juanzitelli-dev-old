@@ -133,7 +133,7 @@ const en: LocaleInterface = {
   },
   projects: {
     title: "Projects",
-    description: "Check out my public projects! Click on them to see more",
+    description: "Check out my public projects! If the project's deployed, you can check it's website out by pressing the green button",
     takeMeThereText: "Take me there!",
   },
 };

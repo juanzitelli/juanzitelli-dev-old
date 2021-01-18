@@ -16,7 +16,7 @@ const Career = ({ courses }: CareerProps) => {
 	const { t } = useTranslation();
 	console.log("Courses", courses);
 	return (
-		<Layout title="Career">
+		<Layout title={`${t.career.title}`}>
 			<section className="p-5 sm:p-8 md:p-16 lg:p-32">
 				<header>
 					<SectionDescription title={t.career.title} description={t.career.description} />
@@ -31,10 +31,10 @@ const Career = ({ courses }: CareerProps) => {
 
 export async function getServerSideProps() {
 
-	const {data: c1} = await axios.get(`https://www.udemy.com/api-2.0/courses/1362070/`)
-	const {data: c2} = await axios.get(`https://www.udemy.com/api-2.0/courses/3096364/`)
-	const {data: c3} = await axios.get(`https://www.udemy.com/api-2.0/courses/947098/`)
-	const {data: c4} = await axios.get(`https://www.udemy.com/api-2.0/courses/1879018/`)
+	const { data: c1 } = await axios.get(`https://www.udemy.com/api-2.0/courses/1362070/`)
+	const { data: c2 } = await axios.get(`https://www.udemy.com/api-2.0/courses/3096364/`)
+	const { data: c3 } = await axios.get(`https://www.udemy.com/api-2.0/courses/947098/`)
+	const { data: c4 } = await axios.get(`https://www.udemy.com/api-2.0/courses/1879018/`)
 
 	const courses = [c1, c2, c3, c4]
 
