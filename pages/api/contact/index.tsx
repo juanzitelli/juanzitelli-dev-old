@@ -5,9 +5,6 @@ export default async (req: any, res: any) => {
 
 	const { firstName, lastName, email, message } = req.body;
 
-
-	console.log("🌟 REFRESH TOKEN" + process.env.CLIENT_REFRESH_TOKEN)
-
 	const oAuth2Client = new google.auth.OAuth2(
 		process.env.CLIENT_ID,
 		process.env.CLIENT_SECRET,
