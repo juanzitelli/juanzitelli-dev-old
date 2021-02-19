@@ -1,4 +1,3 @@
-import Axios from 'axios'
 import ProjectCard from '../../components/projects/Project';
 import Layout from '../../components/ui/Layout';
 import SectionDescription from '../../components/ui/SectionDescription';
@@ -31,7 +30,6 @@ const Projects = () => {
 				}
 			</section>
 		</Layout>
-		// <div></div>
 	)
 }
 
